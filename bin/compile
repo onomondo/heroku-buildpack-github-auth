@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+const gitConfigTemplate = `
+[url "https://api.github.com/"]
+    insteadOf = "https://github.com/"
+[url "https://ssh@github.com/"]
+    insteadOf = "ssh://git@github.com/"
+[url "https://git@github.com/"]
+    insteadOf = "git@github.com:"
+`;
+
+const [
+  _,
+  __,
+  buildDir,
+  cacheDir,
+  envDir
+] = process.argv;
+const token = fs.readFileSync(path.join(envDir, 'GITHUB_AUTH_TOKEN')).toString();
+if (!token) {
+  console.log('GITHUB_AUTH_TOKEN not set in environment variables');
+  process.exit(1);
+}
+
+const configPath = path.join(process.env.HOME, '.gitconfig');
+const askPassPath = path.join(provess.env.HOME, '.git-askpass');
+fs.writeFileSync(configPath, gitConfigTemplate);
+fs.writeFileSync(askPassPath, `echo ${authToken}`);
+fs.chmodSync(askPassPath, '0700');

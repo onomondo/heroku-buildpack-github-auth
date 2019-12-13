@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Copied from https://github.com/timshadel/heroku-buildpack-github-netrc/blob/master/bin/release
+
+if [ -f $1/failed ]
+then
+  exit 1
+else
+  echo "--- {}"
+fi
