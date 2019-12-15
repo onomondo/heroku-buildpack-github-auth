@@ -30,4 +30,4 @@ EOL
 
 chmod +x $ASKPASS_PATH
 
-echo "export GIT_ASKPASS=\"$HOME/.git-askpass\" >> $bp_dir/export
+echo "export GIT_ASKPASS=\"$HOME/.git-askpass\" >> $BUILD_DIR/export
