@@ -1,2 +1,2 @@
-GIT_ASKPASS=$HOME/.git-askpass
-MOOMOO="foobar"
+export GIT_ASKPASS=$HOME/.git-askpass
+export MOOMOO="foobar"
