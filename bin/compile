@@ -30,5 +30,5 @@ EOL
 
 chmod +x $ASKPASS_PATH
 
-mkdir -p "$BUILD_DIR/.profile.d"
-echo "export GIT_ASKPASS=\"$HOME/.git-askpass\"" >> "$BUILD_DIR/.profile.d/NOTICE-ME.sh"
+# mkdir -p "$BUILD_DIR/.profile.d"
+# echo "export GIT_ASKPASS=$HOME/.git-askpass" >> "$BUILD_DIR/.profile.d/NOTICE-ME.sh"
