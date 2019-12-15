@@ -1,0 +1,2 @@
+export GIT_ASKPASS=$HOME/.git-askpass
+export MOOMOO="i am the moo"
