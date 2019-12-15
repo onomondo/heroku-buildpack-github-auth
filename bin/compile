@@ -28,4 +28,4 @@ cat >$ASKPASS_PATH <<EOL
 echo $TOKEN
 EOL
 
-chmod 0700 $ASKPASS_PATH
+chmod +x $ASKPASS_PATH
