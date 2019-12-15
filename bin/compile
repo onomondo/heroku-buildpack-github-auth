@@ -14,6 +14,8 @@ fi
 TOKEN=`cat $ENV_DIR/GITHUB_AUTH_TOKEN`
 
 cat >$CONFIG_PATH <<EOL
+[core]
+    askpass = ~/.git-askpass
 [url "https://api.github.com/"]
     insteadOf = "https://github.com/"
 [url "https://ssh@github.com/"]
@@ -22,5 +24,8 @@ cat >$CONFIG_PATH <<EOL
     insteadOf = "git@github.com:"
 EOL
 
-echo "echo $TOKEN" > $ASKPASS_PATH
+cat >$ASKPASS_PATH <<EOL
+echo $TOKEN
+EOL
+
 chmod 0700 $ASKPASS_PATH
