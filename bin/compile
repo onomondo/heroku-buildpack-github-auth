@@ -14,8 +14,6 @@ fi
 TOKEN=`cat $ENV_DIR/GITHUB_AUTH_TOKEN`
 
 cat >$CONFIG_PATH <<EOL
-[core]
-    askpass = ~/.git-askpass
 [url "https://api.github.com/"]
     insteadOf = "https://github.com/"
 [url "https://ssh@github.com/"]
@@ -29,6 +27,3 @@ echo $TOKEN
 EOL
 
 chmod +x $ASKPASS_PATH
-
-# mkdir -p "$BUILD_DIR/.profile.d"
-# echo "export GIT_ASKPASS=$HOME/.git-askpass" >> "$BUILD_DIR/.profile.d/NOTICE-ME.sh"
