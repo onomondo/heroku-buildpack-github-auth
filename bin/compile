@@ -7,8 +7,6 @@ ENV_DIR=$3
 CONFIG_PATH=$BUILD_DIR/.gitconfig
 ASKPASS_PATH=$HOME/.git-askpass
 
-echo "BUILD_DIR: $BUILD_DIR"
-
 if [ ! -f $ENV_DIR/GITHUB_AUTH_TOKEN ]; then
   echo "GITHUB_AUTH_TOKEN environment variable not set"
   exit 1
