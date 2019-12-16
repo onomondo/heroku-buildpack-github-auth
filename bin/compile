@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
+# https://coolaj86.com/articles/vanilla-devops-git-credentials-cheatsheet/
 
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
-CONFIG_PATH=$HOME/.gitconfig
+CONFIG_PATH=$BUILD_DIR/.gitconfig
 ASKPASS_PATH=$HOME/.git-askpass
+
+echo "BUILD_DIR: $BUILD_DIR"
 
 if [ ! -f $ENV_DIR/GITHUB_AUTH_TOKEN ]; then
   echo "GITHUB_AUTH_TOKEN environment variable not set"
   exit 1
 fi
-
-TOKEN=`cat $ENV_DIR/GITHUB_AUTH_TOKEN`
 
 cat >$CONFIG_PATH <<EOL
 [url "https://api.github.com/"]
@@ -22,6 +23,7 @@ cat >$CONFIG_PATH <<EOL
     insteadOf = "git@github.com:"
 EOL
 
+TOKEN=`cat $ENV_DIR/GITHUB_AUTH_TOKEN`
 cat >$ASKPASS_PATH <<EOL
 echo $TOKEN
 EOL
